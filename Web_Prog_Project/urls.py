@@ -30,9 +30,8 @@ urlpatterns = [
     path('logout',views.logout),    
     path('<slug:program_slug>',views.programPage,name='program_details'),
     path('<slug:program_slug>/book',views.programBook,name='program_book')
+
 ]
-
-
 
 if settings.DEBUG :
     urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
