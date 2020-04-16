@@ -1,0 +1,175 @@
+{% extends 'layout.html' %} {% block content %}
+<style>
+  ul.timeline {
+    list-style-type: none;
+    position: relative;
+  }
+  ul.timeline:before {
+    content: " ";
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+  }
+  ul.timeline > li {
+    margin: 20px 0;
+    padding-left: 20px;
+  }
+  ul.timeline > li:before {
+    content: " ";
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #22c0e8;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+  }
+
+  .form-inline .form-control {
+    display: inline-block !important;
+    width: auto !important;
+  }
+</style>
+
+<img class="card-img-top" src="{{program.image.url}}" alt="First slide" />
+<h1 class="m-5" align="center">{{program.name}}</h1>
+
+<div class="container">
+  <hr />
+  <ul class="nav nav-pills nav-fill">
+    <li class="nav-item">
+      <i class="fas fa-user-alt fa-2x"></i>
+      <div align="center"><strong>Hosted by locals</strong></div>
+    </li>
+    <li class="nav-item">
+      <i class="far fa-clock fa-2x"></i>
+      <div align="center"><strong>Durations</strong></div>
+      <div align="center">10 hours</div>
+    </li>
+    <li class="nav-item">
+      <i class="fas fa-bus fa-2x"></i>
+      <div align="center"><strong>Vihecle</strong></div>
+      <div align="center">Public transport</div>
+    </li>
+    <li class="nav-item">
+      <i class="far fa-calendar-check fa-2x"></i>
+      <div align="center"><strong>Include</strong></div>
+      <div align="center">Foods,Transport,Tickets</div>
+    </li>
+  </ul>
+  <hr />
+</div>
+
+<div align="center" class="m-5">
+  <h2 align="center" class="m-5">Description</h2>
+  {{program.description}}
+</div>
+
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h2 align="center">Itinerary</h2>
+      <ul class="timeline">
+        {% if program.program_details.time1%}
+        <li>
+          <a target="_blank" href="#">{{program.program_details.time1}}</a>
+          <p>
+            {{program.program_details.description1}}
+          </p>
+        </li>
+        {% endif %} {% if program.program_details.time2%}
+        <li>
+          <a target="_blank" href="#">{{program.program_details.time2}}</a>
+          <p>
+            {{program.program_details.description2}}
+          </p>
+        </li>
+        {% endif %} {% if program.program_details.time3%}
+        <li>
+          <a target="_blank" href="#">{{program.program_details.time3}}</a>
+          <p>
+            {{program.program_details.description3}}
+          </p>
+        </li>
+        {% endif %} {% if program.program_details.time4%}
+        <li>
+          <a target="_blank" href="#">{{program.program_details.time4}}</a>
+          <p>
+            {{program.program_details.description4}}
+          </p>
+        </li>
+        {% endif %} {% if program.program_details.time5%}
+        <li>
+          <a target="_blank" href="#">{{program.program_details.time5}}</a>
+          <p>
+            {{program.program_details.description5}}
+          </p>
+        </li>
+        {% endif %} {% if program.program_details.time6%}
+        <li>
+          <a target="_blank" href="#">{{program.program_details.time6}}</a>
+          <p>
+            {{program.program_details.description6}}
+          </p>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div
+  class="block-32 aos-init aos-animate"
+  data-aos="fade-up"
+  data-aos-offset="-200"
+>
+  <form
+    action="{{program.get_book_url}}"
+    method="GET"
+    class="form-inline d-flex justify-content-center container"
+  >
+    {% csrf_token %}
+
+    <label for="checkin_date" class="font-weight-bold text-black m-4"
+      >Check In</label
+    >
+    <div class="field-icon-wrap">
+      <input type="date" name="checkin_date" class="form-control m-4" />
+    </div>
+
+    <label for="adults" class="font-weight-bold text-black m-4">Adults</label>
+    <div class="field-icon-wrap">
+      <select name="adults" class="form-control m-4">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+    </div>
+
+    <label for="children" class="font-weight-bold text-black m-4"
+      >Children</label
+    >
+    <div class="field-icon-wrap">
+      <select name="children" class="form-control m-4">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+    </div>
+
+    <button class="btn btn-secondary btn-lg active m-4" type="submit">
+      Book
+    </button>
+  </form>
+</div>
+
+{% endblock %}

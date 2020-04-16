@@ -1,0 +1,28 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="m-5">
+  <h1 align="center">Log in</h1>
+  {% if messages %} {% for message in messages %}
+  <div class="alert alert-danger" role="alert">
+    {{message}}
+  </div>
+  {% endfor %} {%endif %}
+  <form action="login_result" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="exampleInputEmail1">Username</label>
+      <input class="form-control" name="username" />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        name="password"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock %}

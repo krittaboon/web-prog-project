@@ -1,0 +1,39 @@
+{% extends 'layout.html' %} {% block content %} {% if messages %}
+<div class="card m-5">
+  <img class="card-img-top" src="{{program.image.url}}" alt="Card image cap" />
+  <div class="card-body">
+    <h4>{{program.name}}</h4>
+  </div>
+  <ul class="list-group list-group-flush">
+    {% for message in messages %}
+    <li class="list-group-item">{{message}}</li>
+    {% endfor %}
+  </ul>
+  <div class="card-body">
+    <form class="" action="" method="POST">
+      {% csrf_token %}
+      <script
+        src="https://checkout.stripe.com/checkout.js"
+        class="stripe-button m-5"
+        data-key="{{ data_key }}"
+        data-amount="{{ stripe_total }}"
+        data-name="Kayub Pen Tieo"
+        data-description="{{ description }}"
+        data-locale="thailand"
+        data-currency="thb"
+        data-shipping-address="true"
+        data-billing-address="true"
+        data-zip-code="true"
+      ></script>
+    </form>
+
+    <a
+      href="{{program.get_url}}"
+      class="btn btn-secondary btn-lg active m-5"
+      role="button"
+      aria-pressed="true"
+      >Back</a
+    >
+  </div>
+</div>
+{% endif %} {% endblock %}
