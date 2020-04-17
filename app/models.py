@@ -24,7 +24,7 @@ class Program(models.Model):
     description=models.TextField(blank=True)
     price=models.DecimalField(max_digits=10,decimal_places=2)
     promotion_price=models.DecimalField(max_digits=10,decimal_places=2)
-    image=models.ImageField(upload_to="program",blank=True)
+    image = models.ImageField(upload_to = 'images/' , null= True, blank= True)
     available=models.BooleanField(default=True)
     promotion=models.BooleanField(default=True)
     create=models.DateTimeField(auto_now_add=True)
