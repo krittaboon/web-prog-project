@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['*']
 
 #PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 #STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-STATIC_URL = 'https://kayub-pen-tieo-bucket.s3.amazonaws.com'
+STATIC_URL = 'https://kayub-pen-tieo-bucket.s3.us-east-2.amazonaws.com/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
