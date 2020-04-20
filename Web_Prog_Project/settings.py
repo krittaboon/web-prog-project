@@ -28,6 +28,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
+
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
@@ -48,7 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
-    'stripe'
+    'stripe',
+    'storages'
     
 ]
 
@@ -146,3 +148,12 @@ PUBLIC_KEY = 'pk_test_Flctv65L4g70DweqlHSq2lpY00GQVI5VRF'
 SECRET_KEY = 'sk_test_s61L12qbt8pgPFDtU1LJd9Bc005md8feMG'
 
 
+#S3 BUCKETS CONFIG
+
+AWS_ACCESS_KEY_ID = 'AKIA3GDFTGGCWA36RJWS'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'kayub-pen-tieo-bucket'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
