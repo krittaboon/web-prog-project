@@ -1,6 +1,11 @@
 {% extends 'layout.html' %} {% block content %} {% if messages %}
 <div class="card m-5">
-  <img class="card-img-top" src="{{program.image.url}}" alt="Card image cap" />
+  <img
+    class="card-img-top"
+    src="/static{{program.image.url}}"
+    alt="First slide"
+  />
+
   <div class="card-body">
     <h4>{{program.name}}</h4>
   </div>
