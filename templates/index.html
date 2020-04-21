@@ -85,12 +85,12 @@
         </div>
       </div>
     </div>
-
+    {% endif %}
     <!-- if last column in row -->
     {% if forloop.counter|divisibleby:"3" and not forloop.last %}
   </div>
   <div class="row">
-    {% endif %} {% endif %} {% endfor %}
+    {% endif %} {% endfor %}
   </div>
 </div>
 
