@@ -3,6 +3,7 @@ from django.urls import reverse
     
 # Create your models here.
 class ProgramDetail(models.Model):
+    name=models.CharField(max_length=255,unique=True)
     time1=models.CharField(max_length=255,blank=True)
     description1=models.TextField(blank=True)
     time2=models.CharField(max_length=255,blank=True)
@@ -15,6 +16,9 @@ class ProgramDetail(models.Model):
     description5=models.TextField(blank=True)
     time6=models.CharField(max_length=255,blank=True)
     description6=models.TextField(blank=True)
+
+    def __str__(self):
+        return self.name
    
 
 class Program(models.Model):
