@@ -172,8 +172,13 @@ SECRET_KEY = 'sk_test_s61L12qbt8pgPFDtU1LJd9Bc005md8feMG'
 # STATICFILES_FINDERS = (           'django.contrib.staticfiles.finders.FileSystemFinder',    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 # )
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
+
+
+STATIC_URL='/static/'
+STATIC_ROOT=os.path.join(BASE_DIR,'static')
+
+MEDIA_URL='/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,'staic','media')
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
