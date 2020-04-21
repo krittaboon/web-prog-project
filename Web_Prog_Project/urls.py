@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home),
@@ -32,6 +33,7 @@ urlpatterns = [
     path('<slug:program_slug>/book',views.programBook,name='program_book')
 
 ]
+
 
 if settings.DEBUG :
     urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
