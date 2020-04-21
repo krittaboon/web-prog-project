@@ -29,17 +29,6 @@ DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 
-#PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-#STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-#STATIC_URL = 'https://kayub-pen-tieo-bucket.s3.us-east-2.amazonaws.com/'
-
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-
-#ADMIN_MEDIA_PREFIX = '/admin-media/'
-
-
-
-
 # Application definition
 
 INSTALLED_APPS = [

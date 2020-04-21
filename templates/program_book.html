@@ -14,7 +14,8 @@
     <li class="list-group-item">{{message}}</li>
     {% endfor %}
   </ul>
-  <div class="card-body">
+
+  <div class="row card-body">
     <form class="" action="" method="POST">
       {% csrf_token %}
       <script
@@ -34,7 +35,8 @@
 
     <a
       href="{{program.get_url}}"
-      class="btn btn-secondary btn-lg active m-5"
+      class="btn btn-primary btn-lg active ml-4"
+      style="height: 15px;"
       role="button"
       aria-pressed="true"
       >Back</a
